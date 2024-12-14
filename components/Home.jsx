@@ -4,7 +4,8 @@ const Layout = require("./Layout");
 module.exports = function Home({ title, user }) {
   return (
     <Layout title={title} user={ user }>
-        Welcome to cabel channels web app
+        <h2>Apartments</h2>
+        
     </Layout>
   );
 };

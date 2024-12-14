@@ -13,8 +13,8 @@ module.exports = function Register({ title, user }) {
             <div className="registrationDiv">
                 <form method="POST" className="registrationForm">
                     <div><label>Email: <input name="newUserEmail" type="text" /></label></div>
-                    <div><label>Password: <input name="newUserPassword1" type="text" /></label></div>
-                    <div><label>Confirm password: <input name="newUserPassword2" type="text" /></label></div>
+                    <div><label>Password: <input name="newUserPassword1" type="password" /></label></div>
+                    <div><label>Confirm password: <input name="newUserPassword2" type="password" /></label></div>
                     <div><button id="regBtn" type="submit">Create new account</button></div>
                 </form>
                 <div className="messageDiv"></div>

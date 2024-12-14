@@ -53,8 +53,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #000;
-    color: aliceblue;
+    background: rgb(166, 203, 236);
 }
 
 main {
@@ -64,4 +63,45 @@ main {
     margin-bottom: 50px;
     background-color: aliceblue;
     padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.iamnew,
+#regBtn,
+#logBtn {
+    width: 100px;
+    background: aliceblue;
+    padding: 5px 10px 5px 10px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.iamnew:hover,
+#regBtn:hover,
+#logBtn:hover {
+    background: rgb(166, 203, 236);
+    cursor: pointer;
+}
+
+.newUserDiv {
+    width: 100px
+}
+
+.newUserDiv a {
+    text-decoration: none;
 }

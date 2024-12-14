@@ -16,12 +16,14 @@ module.exports = function Layout({ children, title, user }) {
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="/profile">Profile</a></li>
+                            <li><a href='/logout'>Logout</a></li>
                         </ul>
                     </nav>) : (
                     <nav>
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="/login">Login</a></li>
+                            <li><a href='/registration'>Registration</a></li>
                         </ul>
                     </nav>)
                 }
