@@ -15,7 +15,6 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
     align-items: center;
@@ -24,6 +23,11 @@ header {
 }
 
 /* Лого */
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
 h1 {
     font-size: 25px;
     padding: 20px;
@@ -104,4 +108,33 @@ input {
 
 .newUserDiv a {
     text-decoration: none;
+}
+
+.apartmentsContainer {
+    display: flex;
+    justify-self: center;
+    border: 1px solid black;
+    width: 95%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.apartment_block {
+    flex-direction: column;
+    display: flex;
+    width: 30%;
+    max-width: 33%;
+    min-width: 30%;
+}
+
+.apartImage {
+    width: 90%;
+    height: 200px;
+}
+
+.newApart {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    border: 1px solid black
 }

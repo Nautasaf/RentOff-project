@@ -10,20 +10,20 @@ module.exports = function Layout({ children, title, user }) {
         </head>
         <body>
             <header>
-                <h1>RentOff</h1>
+                <h1><img src='/images/icon.png' alt='Logo' className='logo'></img>RentOff</h1>
                 {user ? 
                     (<nav>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/profile">Profile</a></li>
-                            <li><a href='/logout'>Logout</a></li>
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/profile">Профиль</a></li>
+                            <li><a href='/logout'>Выйти</a></li>
                         </ul>
                     </nav>) : (
                     <nav>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/login">Login</a></li>
-                            <li><a href='/registration'>Registration</a></li>
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/login">Вход</a></li>
+                            <li><a href='/registration'>Регистрация</a></li>
                         </ul>
                     </nav>)
                 }
