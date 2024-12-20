@@ -30,6 +30,7 @@ router.get('/', async (req, res) => {
       user,
       apartments,
       count,
+      likes,
       title: "Главная"
     }
     

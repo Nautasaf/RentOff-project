@@ -113,28 +113,91 @@ input {
 .apartmentsContainer {
     display: flex;
     justify-self: center;
+    flex-direction: column;
     border: 1px solid black;
     width: 95%;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 .apartment_block {
-    flex-direction: column;
     display: flex;
-    width: 30%;
-    max-width: 33%;
-    min-width: 30%;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.apartImage {
-    width: 90%;
-    height: 200px;
-}
+    .imageDiv {
+        display: flex;
+        justify-content: center;
+        width: 40%;
+    }
+
+    .infoDiv {
+        width: 50%;
+    }
+
+    .like {
+        width: 50px;
+        align-items: center;
+        background-color: rgb(196, 241, 241);;
+    }
+
+    .like:hover {
+        cursor: pointer;
+        background-color: rgb(155, 233, 233);
+    }
+
+    .apartImage {
+        width: 90%;
+    }
+
+    .ownerFunctions {
+        width: 10%;
+    }
+
+    .ownerButtons {
+        text-align: center;
+        font-size: medium;
+        background-color: rgb(196, 241, 241);
+        width: 95%
+    }
+
+    .ownerButtons:hover {
+        cursor: pointer;
+        background-color: rgb(155, 233, 233);
+    }
 
 .newApart {
     flex-direction: column;
     display: flex;
     align-items: center;
     border: 1px solid black
+}
+
+.postInputDiv {
+    display: flex;
+}
+
+.postInput {
+    width: 100%;
+    justify-self: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.postButtonDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.addingButton {
+    width: 80%;
+    text-align: center;
+    background-color: rgb(196, 241, 241);;
+}
+
+.addingButton:hover {
+    cursor: pointer;
+    background-color: rgb(155, 233, 233);
 }

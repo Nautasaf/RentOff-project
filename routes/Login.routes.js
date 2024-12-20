@@ -3,7 +3,6 @@ const { User } = require('../db/models')
 const express = require('express');
 const Login = require("../components/Login")
 const bcrypt = require('bcrypt')
-const session = require("express-session")
 
 const router = express.Router();
 
@@ -42,6 +41,7 @@ router.post("/", async (req, res) => {
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.clearCookie('user_sid');
+    res.redirect('/')
 })
 
 module.exports = router;

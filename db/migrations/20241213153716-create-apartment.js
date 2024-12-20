@@ -21,7 +21,19 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      area: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       rent: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      floor: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      maxFloor: {
         allowNull: false,
         type: Sequelize.INTEGER
       },

@@ -11,14 +11,24 @@ module.exports = function Profile({ title, user, myApartments, likedApartments, 
                         <h2>Мои объявления</h2>
                         <div className="apartmentsContainer">
                             {myApartments ? myApartments.map((apartment) => (
-                            <div className="apartment_block" key={apartment.id} owner={apartment.user_id}>
-                                <div><img className="apartImage" src={apartment.image} alt='apartment_image'></img></div>
-                                <div>Комнат в квартире: {apartment.rooms}</div>
-                                <div>Арендная плата: {apartment.rent}</div>
-                                <div>Адрес: {apartment.address}</div>
-                                <div>Описание: {apartment.description}</div>
-                                <button className="like">{count[apartment.id]}♡</button>
-                            </div>
+                                <div className="apartment_block" key={apartment.id} owner={apartment.user_id}>
+                                    <div className="imageDiv"><img className="apartImage" src={apartment.image} alt='apartment_image'></img></div>
+                                    <div className='infoDiv'>
+                                        <div>{apartment.rooms}-комн. квартира, {apartment.area} м², {apartment.floor}/{apartment.maxFloor} этаж</div>
+                                        <div>Арендная плата: {apartment.rent}</div>
+                                        <div>Адрес: {apartment.address}</div>
+                                        <div>Описание: {apartment.description}</div>
+                                        <button className="like" type='button'>{count[apartment.id]}♡</button>
+                                    </div>
+                                    {apartment.user_id === user.id ? (
+                                        <div className="ownerFunctions">
+                                            <button className="ownerButtons">Удалить</button>
+                                            <button className="ownerButtons">Изменить</button>
+                                        </div>
+                                    ) : (
+                                        null
+                                    )}
+                                </div>
                             )) : (null)}
                         </div>
                          
@@ -26,12 +36,14 @@ module.exports = function Profile({ title, user, myApartments, likedApartments, 
                         <div className="apartmentsContainer">
                             {likedApartments ? likedApartments.map((apartment) => (
                             <div className="apartment_block" key={apartment.id} owner={apartment.user_id}>
-                                <div><img className="apartImage" src={apartment.image} alt='apartment_image'></img></div>
-                                <div>Комнат в квартире: {apartment.rooms}</div>
-                                <div>Арендная плата: {apartment.rent}</div>
-                                <div>Адрес: {apartment.address}</div>
-                                <div>Описание: {apartment.description}</div>
-                                <button className="like">{count[apartment.id]}♡</button>
+                                <div className="imageDiv"><img className="apartImage" src={apartment.image} alt='apartment_image'></img></div>
+                                <div className='infoDiv'>
+                                    <div>{apartment.rooms}-комн. квартира, {apartment.area} м², {apartment.floor}/{apartment.maxFloor} этаж</div>
+                                    <div>Арендная плата: {apartment.rent}</div>
+                                    <div>Адрес: {apartment.address}</div>
+                                    <div>Описание: {apartment.description}</div>
+                                    <button className="like">{count[apartment.id]}♡</button>
+                                </div>
                             </div>
                             )) : (null)}
                         </div>

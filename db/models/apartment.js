@@ -20,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
   Apartment.init({
     user_id: DataTypes.INTEGER,
     rooms: DataTypes.INTEGER,
+    area: DataTypes.INTEGER,
     rent: DataTypes.INTEGER,
+    floor: DataTypes.INTEGER,
+    maxFloor: DataTypes.INTEGER,
     address: DataTypes.TEXT,
     description: DataTypes.TEXT,
     image: DataTypes.STRING,
