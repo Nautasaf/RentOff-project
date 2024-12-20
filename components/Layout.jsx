@@ -16,7 +16,7 @@ module.exports = function Layout({ children, title, user }) {
                         <ul>
                             <li><a href="/">Главная</a></li>
                             <li><a href="/profile">Профиль</a></li>
-                            <li><a href='/logout'>Выйти</a></li>
+                            <li><a href='/login/logout'>Выйти</a></li>
                         </ul>
                     </nav>) : (
                     <nav>
