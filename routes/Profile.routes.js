@@ -47,4 +47,15 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.delete('/', async (req, res) => {
+  const {delApId } = req.body;
+  try {
+    const delApartBD = await Apartment.findOne({where: {id: delApId}});
+    await delApartBD.destroy()
+    res.status(200).json({ message: 'Объявление удалено' })
+  } catch (error) {
+    console.log('Ошибка при удалении объявления', error);
+  }
+})
+
 module.exports = router;

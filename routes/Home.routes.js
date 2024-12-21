@@ -47,11 +47,11 @@ router.post('/', async (req, res) => {
   try {
     const newAdv = await Apartment.create({
       user_id: user.id,
-      rooms: newApartRooms,
-      area: newApartArea,
-      rent: newApartRent,
-      floor: newApartFloor,
-      maxFloor: newApartMaxFloor,
+      rooms: Number(newApartRooms),
+      area: Number(newApartArea),
+      rent: Number(newApartRent),
+      floor: Number(newApartFloor),
+      maxFloor: Number(newApartMaxFloor),
       address: newApartAddress,
       description: newApartDescription,
       image: `images/${randomImage}.jpg`
@@ -59,6 +59,17 @@ router.post('/', async (req, res) => {
     res.status(201).json({message: 'Создано новое объявление'})
   } catch (error) {
     console.log('Ошибка при создании объявления', error);
+  }
+})
+
+router.delete('/', async (req, res) => {
+  const {delApId} = req.body;
+  try {
+    const delApartBD = await Apartment.findOne({where: {id: delApId}});
+    await delApartBD.destroy()
+    res.status(200).json({ message: 'Объявление удалено' })
+  } catch (error) {
+    console.log('Ошибка при удалении объявления', error);
   }
 })
 

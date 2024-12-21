@@ -155,14 +155,16 @@ input {
         width: 10%;
     }
 
-    .ownerButtons {
+    .ownerButtonsDel,
+    .ownerButtonsPut {
         text-align: center;
         font-size: medium;
         background-color: rgb(196, 241, 241);
         width: 95%
     }
 
-    .ownerButtons:hover {
+    .ownerButtonsDel:hover,
+    .ownerButtonsPut:hover {
         cursor: pointer;
         background-color: rgb(155, 233, 233);
     }

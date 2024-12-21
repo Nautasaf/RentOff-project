@@ -32,7 +32,7 @@ module.exports = function Home({ title, user, apartments, count, likes }) {
             <h2>Объявления</h2>
             <div className="apartmentsContainer">
               {apartments ? apartments.map((apartment) => (
-                <div className="apartment_block" key={apartment.id} owner={apartment.user_id}>
+                <div className="apartment_block" key={apartment.id} owner={apartment.user_id} apartId={apartment.id}>
                   <div className="imageDiv"><img className="apartImage" src={apartment.image} alt='apartment_image'></img></div>
                   <div className='infoDiv'>
                     <div>{apartment.rooms}-комн. квартира, {apartment.area} м², {apartment.floor}/{apartment.maxFloor} этаж</div>
@@ -43,8 +43,8 @@ module.exports = function Home({ title, user, apartments, count, likes }) {
                   </div>
                   {user && apartment.user_id === user.id ? (
                     <div className="ownerFunctions">
-                      <button className="ownerButtons" method="DELETE">Удалить</button>
-                      <button className="ownerButtons" method="PUT">Изменить</button>
+                      <button className="ownerButtonsDel" method="DELETE">Удалить</button>
+                      <button className="ownerButtonsPut" method="PUT">Изменить</button>
                     </div>
                   ) : (
                     null
@@ -55,6 +55,7 @@ module.exports = function Home({ title, user, apartments, count, likes }) {
           </div>
       </Layout>
       <script defer src='/js/newApart.script.js'></script>
+      <script defer type="module" src="/js/ownerFunctions.js"></script>
     </div>
   );
 };
