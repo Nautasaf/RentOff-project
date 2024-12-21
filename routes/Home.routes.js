@@ -73,4 +73,33 @@ router.delete('/', async (req, res) => {
   }
 })
 
+router.put('/', async (req, res) => {
+  const {
+    changingApartId,
+    roomInputValue,
+    areaInputValue,
+    rentInputValue,
+    floorInputValue,
+    maxFloorInputValue,
+    addressInputValue,
+    destrInputValue
+  } = req.body;
+
+  try {
+    const chApartBd = await Apartment.findOne({where: {id: changingApartId}});
+    chApartBd.rooms = roomInputValue;
+    chApartBd.area = areaInputValue;
+    chApartBd.rent = rentInputValue;
+    chApartBd.floor = floorInputValue;
+    chApartBd.maxFloor = maxFloorInputValue;
+    chApartBd.address = addressInputValue;
+    chApartBd.description = destrInputValue;
+    await chApartBd.save();
+
+    res.status(200).json({ message: 'Successful update' });
+  } catch (error) {
+    console.log('Ошибка при изменении объявления', error);
+  }
+})
+
 module.exports = router;
