@@ -83,7 +83,7 @@ input {
 .iamnew,
 #regBtn,
 #logBtn {
-    width: 100px;
+    width: 200px;
     background: aliceblue;
     padding: 5px 10px 5px 10px;
     color: #000;
@@ -103,7 +103,7 @@ input {
 }
 
 .newUserDiv {
-    width: 100px
+    width: 200px
 }
 
 .newUserDiv a {
@@ -200,4 +200,11 @@ input {
 .addingButton:hover {
     cursor: pointer;
     background-color: rgb(155, 233, 233);
+}
+
+.messageDiv {
+    text-align: center;
+    color: red;
+    width: 350px;
+    background-color: rgb(249, 175, 175);
 }

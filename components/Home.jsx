@@ -13,13 +13,15 @@ module.exports = function Home({ title, user, apartments, count, likes }) {
                 <div>Создать объявление</div>
                   <div className="addApart">
                     <form method="POST" className="apartForm">
-                        <div className="postInputDiv"><label>Комнат в квартире: <input className="postInput" name="newApartRooms" type="text" /></label></div>
-                        <div className="postInputDiv"><label>Арендная плата: <input className="postInput" name="newApartRent" type="text" /></label></div>
-                        <div className="postInputDiv"><label>Адрес: <input className="postInput" name="newApartAddress" type="text" /></label></div>
-                        <div className="postInputDiv"><label>Описание: <input className="postInput" name="newApartDescription" type="text" /></label></div>
-                        <div className="postButtonDiv"><button className="addingButton">Добавить картинку</button></div>
-
-                        <div className="postButtonDiv"><button className="addingButton" id="apartBtn" type="submit">Опубликовать объявление</button></div>
+                      <div className="postInputDiv"><label>Комнат в квартире: <input className="postInput" name="newApartRooms" type="text" /></label></div>
+                      <div className="postInputDiv"><label>Площадь: <input className="postInput" name="newApartArea" type="text" /></label></div>
+                      <div className="postInputDiv"><label>Арендная плата: <input className="postInput" name="newApartRent" type="text" /></label></div>
+                      <div className="postInputDiv"><label>Этаж: <input className="postInput" name="newApartFloor" type="text" /></label></div>
+                      <div className="postInputDiv"><label>Этажей в доме: <input className="postInput" name="newApartMaxFloor" type="text" /></label></div>
+                      <div className="postInputDiv"><label>Адрес: <input className="postInput" name="newApartAddress" type="text" /></label></div>
+                      <div className="postInputDiv"><label>Описание: <input className="postInput" name="newApartDescription" type="text" /></label></div>
+                      <div className="postButtonDiv"><button className="addingButton">Добавить картинку</button></div>
+                      <div className="postButtonDiv"><button className="addingButton" id="apartBtn" type="submit">Опубликовать объявление</button></div>
                     </form>
                     <div className="messageDiv"></div>
                   </div>
@@ -37,16 +39,9 @@ module.exports = function Home({ title, user, apartments, count, likes }) {
                     <div>Арендная плата: {apartment.rent}</div>
                     <div>Адрес: {apartment.address}</div>
                     <div>Описание: {apartment.description}</div>
-                    <div>
-                        <button className="like" type='button'>{userLikedApart(user.id, apartment.id) ? (
-                            <b>♥</b>
-                        ) : (
-                            <b>♡</b>
-                        )}</button>
-                    </div>
-                    {/* <Like apartId = {apartment.id} userId = {user.id} /> */}
+                    <button className="like">{count[apartment.id]}♡</button>
                   </div>
-                  {apartment.user_id === user.id ? (
+                  {user && apartment.user_id === user.id ? (
                     <div className="ownerFunctions">
                       <button className="ownerButtons" method="DELETE">Удалить</button>
                       <button className="ownerButtons" method="PUT">Изменить</button>

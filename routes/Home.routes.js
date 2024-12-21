@@ -41,15 +41,20 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  const randomImage = 3 + Math.round(Math.random() * 10)
   const user = req.session.user_sid;
-  const { newApartRooms, newApartRent, newApartAddress, newApartDescription } = req.body;
+  const { newApartRooms, newApartArea, newApartRent, newApartFloor, newApartMaxFloor, newApartAddress, newApartDescription } = req.body;
   try {
     const newAdv = await Apartment.create({
-      user_id: user,
+      user_id: user.id,
       rooms: newApartRooms,
+      area: newApartArea,
       rent: newApartRent,
+      floor: newApartFloor,
+      maxFloor: newApartMaxFloor,
       address: newApartAddress,
-      descriprion: newApartDescription
+      description: newApartDescription,
+      image: `images/${randomImage}.jpg`
     })
     res.status(201).json({message: 'Создано новое объявление'})
   } catch (error) {
