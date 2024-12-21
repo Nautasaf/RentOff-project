@@ -14,17 +14,16 @@ loginDiv?.addEventListener('click', async (event) => {
             })
             const result = await response.json();
             if (response.status === 200) {
-                messageDiv.textContent = result.data;
+                messageDiv.innerText = 'Успешный вход';
+                messageDiv.style.padding = "10px";
+                messageDiv.style = "margin-bottom: 10px; color: green; background: aliceblue"
                 setTimeout(() => {
-                    messageDiv.innerText = 'Success';
                     window.location.assign('/');
                 }, 2500);
             } else {
-                messageDiv.textContent = result.data;
-                setTimeout(() => {
-                    messageDiv.innerText = 'Incorrect login or password';
-                    logForm.reset();
-                }, 2500);
+                messageDiv.innerText = 'Неправильные логин или пароль';
+                messageDiv.style.padding = "10px";
+                messageDiv.style = "margin-bottom: 10px"
             }
         } catch (error) {
             console.log('Error: ', error);

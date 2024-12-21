@@ -14,16 +14,16 @@ registrationDiv?.addEventListener('click', async (event) => {
             })
             const result = await response.json();
             if (response.status === 201) {
-                messageDiv.textContent = result.data;
+                messageDiv.innerText = 'Успешная регистрация';
+                messageDiv.style.padding = "10px";
+                messageDiv.style = "margin-bottom: 10px; color: green; background: aliceblue"
                 setTimeout(() => {
                     window.location.assign('/');
                 }, 2500);
             } else {
-                messageDiv.textContent = result.data;
-                setTimeout(() => {
-                    messageDiv.innerText = 'Checkout your data';
-                    regForm.reset();
-                }, 2500);
+                messageDiv.innerText = 'Проверьте свои данные';
+                messageDiv.style.padding = "10px";
+                messageDiv.style = "margin-bottom: 10px"
             }
         } catch (error) {
             console.log('Error: ', error);

@@ -6,16 +6,16 @@ module.exports = function Register({ title, user }) {
     <div>
       <Layout title={title} user={ user }>
         {user ? (
-          <div>You are already loginned</div>
+          <div>Вы уже вошли в свой аккаунт</div>
         ) : (
           <div>
-            Registration
+            Регистрация
             <div className="registrationDiv">
                 <form method="POST" className="registrationForm">
-                    <div><label>Email: <input name="newUserEmail" type="text" /></label></div>
-                    <div><label>Password: <input name="newUserPassword1" type="password" /></label></div>
-                    <div><label>Confirm password: <input name="newUserPassword2" type="password" /></label></div>
-                    <div><button id="regBtn" type="submit">Create new account</button></div>
+                    <div><label>Эл.почта: <input name="newUserEmail" type="text" /></label></div>
+                    <div><label>Пароль: <input name="newUserPassword1" type="password" /></label></div>
+                    <div><label>Повторите пароль: <input name="newUserPassword2" type="password" /></label></div>
+                    <div><button id="regBtn" type="submit">Зарегистрироваться</button></div>
                 </form>
                 <div className="messageDiv"></div>
             </div>

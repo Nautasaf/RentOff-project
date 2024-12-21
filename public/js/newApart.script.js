@@ -14,15 +14,18 @@ addApart?.addEventListener('click', async (event) => {
             })
             const result = await response.json();
             if (response.status === 201) {
-                messageDiv.textContent = result.data;
+                messageDiv.innerText = 'Объявление успешно создано';
+                messageDiv.style.padding = "10px";
+                messageDiv.style = "margin-bottom: 10px; color: green; background: aliceblue"
                 setTimeout(() => {
                     window.location.assign('/');
                 }, 1500);
             } else {
-                messageDiv.textContent = result.data;
+                messageDiv.innerText = 'Проверьте свои данные';
+                messageDiv.style.padding = "10px";
+                messageDiv.style = "margin-bottom: 10px"
                 setTimeout(() => {
                     messageDiv.innerText = 'Checkout your data';
-                    apartForm.reset();
                 }, 1500);
             }
         } catch (error) {
